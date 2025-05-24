@@ -11,8 +11,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         
         {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <img src={logo} alt="Logo" className="h-10 w-10 object-cover rounded-full" />
+        <div className="flex items-center space-x-2"><Link to='/'>
+          <img src={logo} alt="Logo" className="h-10 w-10 object-cover rounded-full" /></Link>
           <Link
             to="/"
             className="text-xl font-bold text-[#980404] hidden md:inline"
@@ -26,7 +26,8 @@ const Navbar = () => {
          <Link to="/Courses" className="hover:text-[#980404] transition">Our Courses</Link>
           <Link to="/faculty" className="hover:text-[#980404] transition">Faculty</Link>
           <Link to="/reviews" className="hover:text-[#980404] transition">Reviews</Link>
-          <Link to="/blog" className="hover:text-[#980404] transition">Blog</Link>
+          <Link to="/blog" className="hover:text-[#980404] transition">Blogs</Link>
+          <Link to="/aboutus" className="hover:text-[#980404] transition">About Us</Link>
           <Link to="/contact" className="hover:text-[#980404] transition">Contact Us</Link>
         </div>
 
@@ -70,6 +71,7 @@ const Navbar = () => {
           <Link to="/faculty" className="block">Faculty</Link>
           <Link to="/reviews" className="block">Reviews</Link>
           <Link to="/blog" className="block">Blog</Link>
+            <Link to="/aboutus" className="block">About Us</Link>
           <Link to="/contact" className="block">Contact Us</Link>
         </div>
       )}

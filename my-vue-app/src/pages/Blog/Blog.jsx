@@ -1,49 +1,89 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const blogPosts = [
+const blogs = [
   {
-    title: 'How to Improve Your English Speaking',
-    summary: 'Discover simple techniques and daily habits that will help you speak English fluently.',
-    date: 'May 15, 2025',
-    link: '#',
+    title: 'How to Speak English Confidently in Public - Blog 1',
+    description:
+      'Struggling with public speaking? This blog gives you simple techniques to overcome fear and speak English naturally in public settings.',
+    path: '/BlogOne',
   },
   {
-    title: 'IELTS Tips from Our Top Scorers',
-    summary: 'Read advice directly from Parrots Academy students who achieved Band 8+ in IELTS.',
-    date: 'May 10, 2025',
-    link: '#',
+    title: 'Top 5 Tips to Crack IELTS Speaking - Blog 2',
+    description:
+      'Your IELTS speaking score depends on fluency, grammar, and confidence. Learn 5 game-changing tips to impress your examiner.',
+    path: '/BlogTwo',
   },
   {
-    title: 'Life Skills Every Teen Should Learn',
-    summary: 'We teach more than just English. Learn about key skills that prepare students for real life.',
-    date: 'May 5, 2025',
-    link: '#',
+    title: 'Why Spoken English is a Life Skill - Blog 3',
+    description:
+      'Speaking English isn’t just for exams — it opens doors to career, education, and life opportunities. Here’s why it’s a must-learn skill.',
+    path: '/BlogThree',
+  },
+  {
+    title: 'Mistakes to Avoid in English Writing - Blog 4',
+    description:
+      'From sentence structure to vocabulary, we break down the most common mistakes students make and how to fix them.',
+    path: '/BlogFour',
+  },
+  {
+    title: 'Best Daily Habits for Learning English Fast - Blog 5',
+    description:
+      'Learning English doesn’t need to be hard. With these daily habits, you’ll improve fluency faster and more naturally.',
+    path: '/BlogFive',
+  },
+  {
+    title: 'How Our Students Improved in 30 Days - Blog 6',
+    description:
+      'Real stories from Parrots Academy learners who made huge progress in just one month — and how you can too.',
+    path: '/BlogSix',
   },
 ];
 
 const Blog = () => {
   return (
-    <div className="min-h-screen bg-white text-gray-800 py-12 px-4 md:px-10 font-poppins">
-      <h1 className="text-3xl font-bold text-center text-[#980404] mb-10">Parrots Academy Blog</h1>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {blogPosts.map((post, index) => (
+    <section className="bg-white py-20 px-6 font-poppins max-w-7xl mx-auto">
+      {/* Title and Intro */}
+      <div className="text-center mb-12">
+        <h2 className="text-4xl font-extrabold text-[#980404] mb-4">Parrots Academy Blog</h2>
+        <p className="text-gray-700 max-w-2xl mx-auto">
+          Discover expert strategies, real student experiences, and powerful techniques to improve your English skills faster and smarter.
+        </p>
+      </div>
+
+      {/* Blog Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {blogs.map((blog, index) => (
           <div
             key={index}
-            className="border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
+            className="bg-gray-50 rounded-xl shadow-md p-6 transition hover:shadow-xl border border-gray-100"
           >
-            <p className="text-xs text-gray-400 mb-2">{post.date}</p>
-            <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
-            <p className="text-sm text-gray-600 mb-4">{post.summary}</p>
-            <a
-              href={post.link}
-              className="text-[#980404] text-sm font-medium hover:underline"
+            <h3 className="text-xl font-semibold text-[#980404] mb-3">{blog.title}</h3>
+            <p className="text-gray-700 text-sm mb-4">{blog.description}</p>
+            <Link
+              to={blog.path}
+              className="inline-block text-sm font-semibold text-white bg-[#980404] px-4 py-2 rounded hover:bg-red-700 transition"
             >
-              Read more →
-            </a>
+              Read More
+            </Link>
           </div>
         ))}
       </div>
-    </div>
+
+      {/* Conclusion & Button */}
+      <div className="mt-20 text-center">
+        <h4 className="text-2xl font-bold text-[#980404] mb-2">Keep Learning with Us</h4>
+        <p className="text-gray-600 mb-6">
+          We publish weekly tips, stories, and strategies. Follow the journey and unlock your English potential.
+        </p>
+        <Link
+          to="/all-blogs"
+          className="inline-block text-white bg-[#980404] hover:bg-red-700 transition px-6 py-3 rounded-md font-medium"
+        >
+          See More Blog Posts
+        </Link>
+      </div>
+    </section>
   );
 };
 
